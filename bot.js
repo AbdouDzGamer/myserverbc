@@ -27,4 +27,4 @@ client.user.setGame(`APEX SERVER`,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.NjA2MjYyMTg4NDExMTkxMzE2.XULavg.PpK5FBm8o03fTX5Hgf9RWMOVauU);
