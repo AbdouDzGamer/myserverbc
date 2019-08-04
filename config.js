@@ -4,4 +4,3 @@ module.exports = {
     prefix: '$',
     devs: ['380827398767378433']
 }//LUXY
- 
