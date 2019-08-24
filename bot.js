@@ -1,4 +1,4 @@
-﻿const Discord = require("discord.js");
+const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = "$";
 
@@ -43,7 +43,7 @@ client.on("message", async message => {
                                 m.delete();
                                     message.channel.send(`:ballot_box_with_check: | Done ... The Broadcast Message Has Been Sent For ${message.guild.memberCount} Members`).then(msg => msg.delete(5000));
                                         message.guild.members.forEach(member => {
-                                            let bc = new Discord.()
+                                            let bc = new Discord.RichEmbed()
                                             .setColor("RANDOM")
                                             .setThumbnail(message.author.avatarURL)
                                             .setTitle("Broadcast")
@@ -132,7 +132,17 @@ client.on("message", async message => {
         });
     }
 });
-
+client.on("message", async message => {
+    if(message.content.startsWith(prefix + "invite")) {
+        let invite = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setAuthor(message.author.username, message.author.displayAvatarURL)
+            .setThumbnail(message.author.avatarURL)
+            .setTitle("**Click Here To Invite The Bot To Your Server :sparkling_heart:**")
+            .setURL(`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8`);
+            message.channel.sendEmbed(invite);
+    }
+});
 client.on("message", async message => {
     if(message.content.startsWith(prefix + "help")) {
         let help = new Discord.RichEmbed()
@@ -143,7 +153,7 @@ client.on("message", async message => {
             برودكاست عادي : ${prefix}bc
             معلومات عن السيرفر : ${prefix}server
             برودكاست للأونلاين فقط : ${prefix}bco
-            يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned
+            يعرض لك عدد المتبندين من سيرفرك : ${prefix}banned 
             **`);
             message.channel.sendEmbed(help); // رابط السيرفر يعود الى سيرفر CODES .
     }
